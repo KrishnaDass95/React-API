@@ -2,7 +2,9 @@
 const Table = ({ cryptoData }) => {
 
     return(
-        <table border="1">
+        <div className="table-container">
+            <table border="1">
+                <tbody>
             <tr>
                 <th>ID</th>
                 <th>NAME</th>
@@ -14,7 +16,7 @@ const Table = ({ cryptoData }) => {
             {
                 cryptoData.map((value, index) => {
                     return (
-                        <tr id={index}>
+                        <tr key={index}>
                             <td>{value.id}</td>
                             <td>{value.name}</td>
                             <td><img src={value.image} alt="crypto"></img></td>
@@ -25,7 +27,9 @@ const Table = ({ cryptoData }) => {
                     )
                 })
             }
+            </tbody>
         </table>
+        </div>
     )
 
 }
